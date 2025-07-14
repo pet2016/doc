@@ -34,6 +34,7 @@ Channel 是 Java NIO 中的一个抽象类，它提供了一种 uniform 的方�
 Channel并不存储数据，只负责数据的传输。
 
 用java编写一个filechanel的读写操作的例子：
+```
 public class FileChannelDemo { 
     public static void main(String[] args) throws IOException {
         FileChannel channel = new RandomAccessFile("file.txt", "rw").getChannel();
@@ -63,8 +64,9 @@ public class FileChannelDemo {
         }
     }
 }
-
+```
 用javava语言写一个SocketChannel的例子
+```
 public class SocketChannelDemo { 
     public static void main(String[] args) throws IOException, InterruptedException { 
         SocketChannel channel = SocketChannel.open();
@@ -104,8 +106,10 @@ public class SocketChannelDemo {
         }
     }
 }
+```
 
 用Java创建ServerSocketChannel的例子
+```
 public class Server { 
     public static void main(String[] args) throws IOException { 
         ServerSocketChannel server = ServerSocketChannel.open();
@@ -126,7 +130,7 @@ public class Server {
         }
     }
 }
-
+```
 #### 什么是Buffer
 Buffer 是 Netty 中的一个核心类，用于存储和操作数据。Buffer 的作用是把数据写入到 Channel 中，或者从 Channel 中读取数据。Buffer 提供了丰富的方法，用于操作数据，如 put()、get()、flip()、clear() 等。
 
@@ -139,6 +143,7 @@ Buffer是一个内存块,有Java堆的buffer和直接内存的buffer。
 2. 适用于频繁的IO操作
 
 java代码创建bytebuffer的例子：
+```
 public class Test {
     public static void main(String[] args) {
         ByteBuffer buffer = ByteBuffer.allocate(1024);
@@ -169,7 +174,7 @@ public class Test {
         System.out.println("position:" + buffer.position());
     }
 }
-
+```
 #### 什么是selector
 selector可以理解为多路复用器，selector可以同时监听多个通道(事件驱动)，当某个通道有数据可读时，selector会返回该通道，然后通过该通道获取数据。
 
@@ -191,6 +196,7 @@ selector的核心API:
 使用场景就是可以使用一个缓冲区数组，自动地根据需要去分配缓冲区的大小。可以减少内存消耗,网络IO也可以使用.
 
 用Java编写一个分散读取的例子
+```
 public class ScatterRead { 
      //获取文件输入流
         File file = new File("1.txt");
@@ -229,7 +235,7 @@ public class ScatterRead {
         outputStreamChannel.close();
         inputStreamChannel.close();
 }
-
+```
 
 #### 直接缓冲区和堆缓冲区
 ![alt text](image.png)
@@ -242,6 +248,7 @@ NIO的主要用途是网络IO,在NIO之前Java使用Socket类进行网络IO，�
 主要思想是把Channel通道注册到Selector中，通过Selector去监听Channel中的事件状态，这样就不需要阻塞等待客户端的连接，从主动等待客户端的连接，变成了通过事件驱动。没有监听的事件，服务器可以做自己的事情。
 
 用java编写使用selector的例子,包括服务端和客户端。
+```
 public class NIOServer {
     public static void main(String[] args) throws Exception {
         //打开一个ServerSocketChannel
@@ -294,6 +301,8 @@ public class NIOServer {
         }
     }
 }
+```
+```
 public class NIOClient {
     public static void main(String[] args) throws Exception {
         SocketChannel socketChannel = SocketChannel.open();
@@ -316,10 +325,12 @@ public class NIOClient {
         System.in.read();
     }
 }
+```
 
 #### SelectionKey
 
 在SelectionKey类中有四个常量表示四种事件，来看源码：
+```
 public abstract class SelectionKey {
     //读事件
     public static final int OP_READ = 1 << 0; //2^0=1
@@ -330,6 +341,6 @@ public abstract class SelectionKey {
     //连接可接受操作,仅ServerSocketChannel支持
     public static final int OP_ACCEPT = 1 << 4; // 2^4=16
 }
-
+```
 
 参考资料
