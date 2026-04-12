@@ -53,7 +53,7 @@ OpenClaw 是一个现代化的全栈应用，首次运行需要编译前端 UI �
 >pnpm install
 
 ##### 构建前端界面
->pnpm ui:build
+    >pnpm ui:build
 
 ##### 构建核心服务
 >pnpm build
@@ -74,3 +74,14 @@ OpenClaw 是一个现代化的全栈应用，首次运行需要编译前端 UI �
 
 ##### 打开管理面板 (Dashboard)
 > node openclaw.mjs dashboard
+
+
+
+
+
+
+####
+
+
+4.5 版本起不来
+npm install @buape/carbon @larksuiteoapi/node-sdk @slack/web-api grammy
