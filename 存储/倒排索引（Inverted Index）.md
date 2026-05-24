@@ -45,6 +45,8 @@
 | 单词 (Term)  | 文档 ID (Posting List)  |
 | ------- | ------- |
 | distributed | [2]  | 
+
+
 | elasticsearch |  [1, 2]    |
 | fast | [1]   |
 | is | [1, 2]   |
