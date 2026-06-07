@@ -42,14 +42,12 @@
 第二步：构建映射
 记录每个单词出现在哪个文档中：
 
-| 单词 (Term)  | 文档 ID (Posting List)  |
+| 单词 (Term)  | 文档 ID (Posting List)  | 
 | ------- | ------- |
-| distributed | [2]  | 
-
-
+| distributed | [2]  |  
 | elasticsearch |  [1, 2]    |
 | fast | [1]   |
-| is | [1, 2]   |
+| is | [1, 2]   |   
 
 第三步：查询
 当你搜索 "fast" 时，ES 无需查看 Doc 2，直接命中词典中的 "fast"，并返回 Posting List 中的 [1]。

@@ -1102,11 +1102,3 @@ That gap is your edge.
 那个缺口正是你的优势所在。
 
 If this was useful:
-
-如果这能有所帮助的话：
-
-→ Repost to share it with your network → Follow @sairahul1 for more breakdowns like this → Bookmark this for reference
-
-→ 分享这个帖子，与你的朋友们一起交流→ 关注@sairahul1，了解更多类似的解析内容→ 收藏此页面，方便以后参考
-I write about AI, building products, and systems that work while you sleep.
-我撰写关于人工智能、产品开发以及那些在您沉睡时依然运行着的系统的文章。
